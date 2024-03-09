@@ -1,3 +1,5 @@
+** Plex 
+
 Based on https://pimylifeup.com/plex-docker/
 Get claim token https://www.plex.tv/claim/
 
@@ -7,6 +9,8 @@ Get claim token https://www.plex.tv/claim/
     -e TZ="UTC" -e PLEX_CLAIM="claim-XXXXXXXXXXXXXXXX" \
     -v $PWD/database:/config -v $PWD/temp:/transcode -v $PWD/media:/data \
     pms-docker/plexinc/pms-docker
+ 
+ ** Tautulli
  
 Access http://192.168.68.109:32400/web
 
