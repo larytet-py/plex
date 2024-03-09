@@ -34,4 +34,4 @@ Access http://localhost:8181
 DNS in the container 
 
     echo '{"dns": ["8.8.8.8", "8.8.4.4", "1.1.1.1"], "max-concurrent-downloads": 3}' | sudo tee /etc/docker/daemon.json
-    curl https://plex.tv
+    docker exec tautulli curl https://plain.tv
