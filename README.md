@@ -1,4 +1,4 @@
-** Plex 
+h1. Plex 
 
 Based on https://pimylifeup.com/plex-docker/
 Get claim token https://www.plex.tv/claim/
@@ -12,7 +12,7 @@ Get claim token https://www.plex.tv/claim/
 
 Access http://192.168.68.109:32400/web
 
- ** Tautulli
+h1. Tautulli
 
 Based on https://github.com/Tautulli/Tautulli/wiki/Installation#linux
 
@@ -29,7 +29,7 @@ Based on https://github.com/Tautulli/Tautulli/wiki/Installation#linux
 Access http://localhost:8181
 
 
-** Tips
+h1. Tips
 
 DNS in the container 
 
