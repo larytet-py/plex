@@ -9,10 +9,12 @@ Get claim token https://www.plex.tv/claim/
     -e TZ="UTC" -e PLEX_CLAIM="claim-XXXXXXXXXXXXXXXX" \
     -v $PWD/database:/config -v $PWD/temp:/transcode -v $PWD/media:/data \
     pms-docker/plexinc/pms-docker
- 
- ** Tautulli
- 
+
 Access http://192.168.68.109:32400/web
+
+ ** Tautulli
+
+Based on https://github.com/Tautulli/Tautulli/wiki/Installation#linux
 
     git clone https://github.com/Tautulli/Tautulli.git
     sudo addgroup tautulli && sudo adduser --system --no-create-home tautulli --ingroup tautulli
