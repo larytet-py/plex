@@ -121,7 +121,7 @@ Overseerr response to `request`
         "permissions": 2,
         "id": 1,
         "email": "tv@gmail.com",
-        "plexUsername": "larrytv",
+        "plexUsername": "tv",
         "username": null,
         "recoveryLinkExpirationDate": null,
         "userType": 1,
@@ -134,7 +134,7 @@ Overseerr response to `request`
         "createdAt": "2024-03-10T12:57:29.000Z",
         "updatedAt": "2024-03-10T12:57:29.000Z",
         "requestCount": 1,
-        "displayName": "larrytv"
+        "displayName": "tv"
       },
       "requestedBy": {
         "permissions": 2,
