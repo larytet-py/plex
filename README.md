@@ -42,6 +42,8 @@ Access http://localhost:8181
 
 ## Overseerr
 
+See https://docs.overseerr.dev/getting-started/installation
+
     mkdir -p overseer/config
     docker run -d \
         --name overseerr \
