@@ -72,7 +72,7 @@ def main():
     if new_requests:
         print(new_requests)
         last_request_id = new_requests[-1].id
-        config_manager.update(args.config, last_request_id)
+        config_manager.update(last_request_id)
     else:
         print("No new requests.")
 
