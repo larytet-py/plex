@@ -1,3 +1,14 @@
+# Goals
+
+* Monitor User Requests Through Overseerr: track what media items users are requesting through Overseerr, which is a tool used for managing media requests.
+* Calculate Watch Rates with Tautulli: determine the watch rates of these requested items, which involves seeing how much of the requested media users actually watch. Tautulli, a monitoring tool for Plex servers, can provide this information.
+* Record Data to a Database: Finally, they want this information (both the requests and the watch rates) to be recorded in a database. This could be for further analysis or reporting.
+
+Essentially, the script would automate the process of collecting data on what users are requesting and how much of it they end up watching, and then store this data for future reference or analysis.
+
+
+# How to
+
 ## Plex 
 
 Based on https://pimylifeup.com/plex-docker/
