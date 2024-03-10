@@ -8,8 +8,9 @@ def get_overseerr_requests(api_key, overseerr_url):
     }
 
     try:
-        response = requests.get(f"{overseerr_url}/request", headers=headers)
+        response = requests.get(f"{overseerr_url}/api/v1/request", headers=headers)
         response.raise_for_status()
+        print(response.text)
 
         # Assuming the data is in JSON format and contains a list of requests
         requests_data = response.json()
@@ -22,8 +23,8 @@ def get_overseerr_requests(api_key, overseerr_url):
 
 def  parse_args():
     parser = argparse.ArgumentParser(description='Fetches requested items from Overseerr.')
-    parser.add_argument('api_key', type=str, help='API Key for Overseerr')
-    parser.add_argument('overseerr_url', type=str, help='URL of the Overseerr instance')
+    parser.add_argument('--api_key', type=str, help='API Key for Overseerr')
+    parser.add_argument('--overseerr_url', type=str, help='URL of the Overseerr instance')
 
     args = parser.parse_args()
 
