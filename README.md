@@ -55,7 +55,11 @@ See https://docs.overseerr.dev/getting-started/installation
         --restart unless-stopped \
         sctx/overseerr
 
-Access http://localhost:5055
+Access http://localhost:5055 . For example,
+
+    export Overseerr_API_KEY=MTc............==
+    curl -H "X-Api-Key: $OVERSEERR_API_KEY" http://localhost:5055/api/v1
+    curl -H "X-Api-Key: $OVERSEERR_API_KEY" http://localhost:5055/api/v1/request
 
 ## Tips
 
