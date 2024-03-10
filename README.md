@@ -67,3 +67,96 @@ DNS in the container
 
     echo '{"dns": ["8.8.8.8", "8.8.4.4", "1.1.1.1"], "max-concurrent-downloads": 3}' | sudo tee /etc/docker/daemon.json
     docker exec tautulli curl https://plain.tv
+
+
+Overseerr response to `request` 
+
+```json
+{
+  "pageInfo": {
+    "pages": 1,
+    "pageSize": 10,
+    "results": 1,
+    "page": 1
+  },
+  "results": [
+    {
+      "id": 1,
+      "status": 2,
+      "createdAt": "2024-03-10T15:01:29.000Z",
+      "updatedAt": "2024-03-10T15:01:29.000Z",
+      "type": "movie",
+      "is4k": false,
+      "serverId": null,
+      "profileId": null,
+      "rootFolder": null,
+      "languageProfileId": null,
+      "tags": [],
+      "isAutoRequest": false,
+      "media": {
+        "downloadStatus": [],
+        "downloadStatus4k": [],
+        "id": 1,
+        "mediaType": "movie",
+        "tmdbId": 763215,
+        "tvdbId": null,
+        "imdbId": null,
+        "status": 3,
+        "status4k": 1,
+        "createdAt": "2024-03-10T15:01:29.000Z",
+        "updatedAt": "2024-03-10T15:01:29.000Z",
+        "lastSeasonChange": "2024-03-10T15:01:29.000Z",
+        "mediaAddedAt": null,
+        "serviceId": null,
+        "serviceId4k": null,
+        "externalServiceId": null,
+        "externalServiceId4k": null,
+        "externalServiceSlug": null,
+        "externalServiceSlug4k": null,
+        "ratingKey": null,
+        "ratingKey4k": null
+      },
+      "seasons": [],
+      "modifiedBy": {
+        "permissions": 2,
+        "id": 1,
+        "email": "larytet.tv@gmail.com",
+        "plexUsername": "larrytv",
+        "username": null,
+        "recoveryLinkExpirationDate": null,
+        "userType": 1,
+        "plexId": 334604257,
+        "avatar": "https://plex.tv/users/e3ac313e3e1ccd62/avatar?c=1710075448",
+        "movieQuotaLimit": null,
+        "movieQuotaDays": null,
+        "tvQuotaLimit": null,
+        "tvQuotaDays": null,
+        "createdAt": "2024-03-10T12:57:29.000Z",
+        "updatedAt": "2024-03-10T12:57:29.000Z",
+        "requestCount": 1,
+        "displayName": "larrytv"
+      },
+      "requestedBy": {
+        "permissions": 2,
+        "id": 1,
+        "email": "larytet.tv@gmail.com",
+        "plexUsername": "larrytv",
+        "username": null,
+        "recoveryLinkExpirationDate": null,
+        "userType": 1,
+        "plexId": 334604257,
+        "avatar": "https://plex.tv/users/e3ac313e3e1ccd62/avatar?c=1710075448",
+        "movieQuotaLimit": null,
+        "movieQuotaDays": null,
+        "tvQuotaLimit": null,
+        "tvQuotaDays": null,
+        "createdAt": "2024-03-10T12:57:29.000Z",
+        "updatedAt": "2024-03-10T12:57:29.000Z",
+        "requestCount": 1,
+        "displayName": "larrytv"
+      },
+      "seasonCount": 0
+    }
+  ]
+}
+```
