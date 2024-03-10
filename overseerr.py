@@ -5,10 +5,37 @@ import requests
 import argparse
 import json
 from collections import namedtuple
-
-Request = namedtuple('Request', ['id', 'type', 'status', 'media_id', 'media_type', 'requested_by'])
-
 import json
+
+Request = namedtuple('Request', ['id', 'type', 'status', 'media_id', 'media_type', 'requested_by', 'tmdbId', 'tvdbId', 'imdbId'])
+
+def get_overseerr_requests(api_key, overseerr_url, last_seen_request):
+    """Fetches requested items from Overseerr and returns them as a list of named tuples."""
+    headers = {"X-Api-Key": api_key}
+    try:
+        response = requests.get(f"{overseerr_url}/api/v1/request", headers=headers)
+        response.raise_for_status()
+
+        data = response.json()
+        requests_list = [
+            Request(
+                id=request['id'],
+                type=request['type'],
+                status=request['status'],
+                media_id=request['media']['id'],
+                media_type=request['media']['mediaType'],
+                requested_by=request['requestedBy']['plexUsername'],
+                tmdbId=request['media'].get('tmdbId'),
+                tvdbId=request['media'].get('tvdbId'),
+                imdbId=request['media'].get('imdbId')
+            )
+            for request in data['results'] if request['id'] > last_seen_request
+        ]
+        return requests_list
+
+    except requests.RequestException as e:
+        print(f"Error fetching data from Overseerr: {e}")
+        return []
 
 class ConfigManager:
     def __init__(self, config_path):
@@ -27,31 +54,6 @@ class ConfigManager:
         """Updates the configuration file with the last seen request ID."""
         with open(self.config_path, 'w') as file:
             json.dump({'last_seen_request': last_seen_request}, file)
-
-def get_overseerr_requests(api_key, overseerr_url, last_seen_request):
-    """Fetches requested items from Overseerr and returns them as a list of named tuples."""
-    headers = {"X-Api-Key": api_key}
-    try:
-        response = requests.get(f"{overseerr_url}/api/v1/request", headers=headers)
-        response.raise_for_status()
-
-        data = response.json()
-        requests_list = [
-            Request(
-                id=request['id'],
-                type=request['type'],
-                status=request['status'],
-                media_id=request['media']['id'],
-                media_type=request['media']['mediaType'],
-                requested_by=request['requestedBy']['plexUsername']
-            )
-            for request in data['results'] if request['id'] > last_seen_request
-        ]
-        return requests_list
-
-    except requests.RequestException as e:
-        print(f"Error fetching data from Overseerr: {e}")
-        return []
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Fetches requested items from Overseerr.')
